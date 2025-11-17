@@ -14,12 +14,7 @@ const LibraryPage = async () => {
   const isAuthenticated = authStorage ? JSON.parse(decodeURIComponent(authStorage)).state.isAuthenticated : false;
 
   if (!isAuthenticated || !userId) {
-    return (
-      <div className="w-full px-6 pt-6">
-        <h1 className="text-5xl font-bold">Library</h1>
-        <UnauthenticatedMessage />
-      </div>
-    );
+    return <UnauthenticatedMessage />;
   }
 
   if (userId) {

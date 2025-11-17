@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { PlusIcon, SearchIcon } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { playlistOptions } from "@/gql/options/client-options";
-import { useSuspenseInfiniteQuery } from "@tanstack/react-query";
+import { useInfiniteQuery } from "@tanstack/react-query";
 import InfiniteScroll from "@/modules/shared/ui/components/infinite-scroll";
 import PlaylistCreate from "../../../playlist/ui/components/playlist-create";
 import PlaylistList from "@/modules/client/playlist/ui/components/playlist-list";
@@ -65,7 +65,7 @@ const PlaylistSectionSuspense = () => {
   const [debouncedSearchQuery] = useDebounce(searchQuery, 300);
 
   // This will only run when the component is rendered (i.e., when user is authenticated)
-  const { data, hasNextPage, isFetchingNextPage, fetchNextPage } = useSuspenseInfiniteQuery(
+  const { data, hasNextPage, isFetchingNextPage, fetchNextPage } = useInfiniteQuery(
     playlistOptions(user!.userId, debouncedSearchQuery, 11),
   );
 
