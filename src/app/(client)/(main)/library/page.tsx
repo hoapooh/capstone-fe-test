@@ -1,6 +1,6 @@
 import { cookies } from "next/headers";
 import { getQueryClient } from "@/providers/get-query-client";
-import { playlistOptions } from "@/gql/options/client-options";
+// import { playlistOptions } from "@/gql/options/client-options";
 import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
 import LibraryView from "@/modules/client/library/ui/views/library-view";
 import UnauthenticatedMessage from "@/modules/client/library/ui/components/unauthenticated-message";
@@ -17,9 +17,9 @@ const LibraryPage = async () => {
     return <UnauthenticatedMessage />;
   }
 
-  if (userId) {
+  /* if (userId) {
     void queryClient.prefetchInfiniteQuery(playlistOptions(userId, undefined, 11));
-  }
+  } */
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
