@@ -72,6 +72,7 @@ const HeaderNav = () => {
         <Link
           key={item.href}
           href={item.href}
+          prefetch
           className={cn(
             `text-main-grey-dark-1 hover:text-main-white inline-block border-b-2 py-[19px]`,
             isNavItemActive(item) ? item.activeStyle : "border-b-transparent",

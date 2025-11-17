@@ -72,6 +72,7 @@ const LibNavigationMenu = () => {
           <NavigationMenuItem key={index} className="relative flex h-full items-center">
             <Link
               href={item.href}
+              prefetch
               className={cn(
                 navigationMenuTriggerStyle(),
                 route === item.href && activeItemStyles,
