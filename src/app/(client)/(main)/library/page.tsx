@@ -1,12 +1,12 @@
 import { cookies } from "next/headers";
-import { getQueryClient } from "@/providers/get-query-client";
+// import { getQueryClient } from "@/providers/get-query-client";
 // import { playlistOptions } from "@/gql/options/client-options";
-import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
+// import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
 import LibraryView from "@/modules/client/library/ui/views/library-view";
 import UnauthenticatedMessage from "@/modules/client/library/ui/components/unauthenticated-message";
 
 const LibraryPage = async () => {
-  const queryClient = getQueryClient();
+  // const queryClient = getQueryClient();
 
   const cookiess = await cookies();
   const authStorage = cookiess.get("auth-storage")?.value;
@@ -22,9 +22,9 @@ const LibraryPage = async () => {
   } */
 
   return (
-    <HydrationBoundary state={dehydrate(queryClient)}>
-      <LibraryView />
-    </HydrationBoundary>
+    // <HydrationBoundary state={dehydrate(queryClient)}>
+    <LibraryView />
+    // </HydrationBoundary>
   );
 };
 
